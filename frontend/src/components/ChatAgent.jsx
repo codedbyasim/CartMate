@@ -24,6 +24,7 @@ function ChatAgent() {
   const mediaRecorderRef = useRef(null);
   const recognitionRef = useRef(null);
   const initialTextRef = useRef("");
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     axios.post(`${API_BASE}/session`)
@@ -51,6 +52,13 @@ function ChatAgent() {
   };
 
   const startNativeSpeech = (stream) => {
+    // Stop any existing native instance to prevent duplicates
+    if (recognitionRef.current) {
+      try {
+        recognitionRef.current.stop();
+      } catch (e) {}
+    }
+
     // Release raw mic stream since browser native speech engine handles its own stream
     if (stream) {
       stream.getTracks().forEach(t => t.stop());
@@ -97,6 +105,10 @@ function ChatAgent() {
 
   const toggleMic = async () => {
     if (isListening) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
       if (mediaRecorderRef.current) {
         mediaRecorderRef.current.stop();
         mediaRecorderRef.current.stream.getTracks().forEach(t => t.stop());
@@ -125,7 +137,7 @@ function ChatAgent() {
         setAudioWs(ws);
 
         let wsConnected = false;
-        const connectionTimeout = setTimeout(() => {
+        timeoutRef.current = setTimeout(() => {
           if (!wsConnected) {
             console.warn("WebSocket timed out. Falling back to native Speech Recognition.");
             ws.close();
@@ -135,7 +147,10 @@ function ChatAgent() {
 
         ws.onopen = () => {
           wsConnected = true;
-          clearTimeout(connectionTimeout);
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+          }
           console.log("WebSocket connected to Speechmatics backend.");
           
           const recorder = new MediaRecorder(stream);
@@ -164,7 +179,10 @@ function ChatAgent() {
         ws.onerror = (err) => {
             console.error("WS connection error, trying native Speech fallback:", err);
             if (!wsConnected) {
-              clearTimeout(connectionTimeout);
+              if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+                timeoutRef.current = null;
+              }
               startNativeSpeech(stream);
             } else {
               setIsListening(false);
@@ -199,6 +217,10 @@ function ChatAgent() {
     if (!inputText.trim() && !attachedImage) return;
     
     if (isListening) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
       if (mediaRecorderRef.current) {
         mediaRecorderRef.current.stop();
         mediaRecorderRef.current.stream.getTracks().forEach(t => t.stop());
