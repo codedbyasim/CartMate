@@ -1,0 +1,2302 @@
+[
+    {
+        "id": "PROD-0001",
+        "name": "Classic Wood Smartwatch",
+        "category": "Electronics",
+        "subcategory": "Smartwatch",
+        "price": 872.67,
+        "currency": "USD",
+        "description": "A high-quality classic wood smartwatch made from metal. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartwatch",
+            "wood",
+            "metal",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Wood+Smartwatch",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Metal",
+            "category": "Smartwatch"
+        }
+    },
+    {
+        "id": "PROD-0002",
+        "name": "Durable Green Smartwatch",
+        "category": "Electronics",
+        "subcategory": "Smartwatch",
+        "price": 797.83,
+        "currency": "USD",
+        "description": "A high-quality durable green smartwatch made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartwatch",
+            "green",
+            "rubber",
+            "durable"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Durable+Green+Smartwatch",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Rubber",
+            "category": "Smartwatch"
+        }
+    },
+    {
+        "id": "PROD-0003",
+        "name": "Durable Blue Smartwatch",
+        "category": "Electronics",
+        "subcategory": "Smartwatch",
+        "price": 41.7,
+        "currency": "USD",
+        "description": "A high-quality durable blue smartwatch made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartwatch",
+            "blue",
+            "cotton",
+            "durable"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Durable+Blue+Smartwatch",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Cotton",
+            "category": "Smartwatch"
+        }
+    },
+    {
+        "id": "PROD-0004",
+        "name": "Sleek Wood Smartwatch",
+        "category": "Electronics",
+        "subcategory": "Smartwatch",
+        "price": 272.37,
+        "currency": "USD",
+        "description": "A high-quality sleek wood smartwatch made from glass. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartwatch",
+            "wood",
+            "glass",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Wood+Smartwatch",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Glass",
+            "category": "Smartwatch"
+        }
+    },
+    {
+        "id": "PROD-0005",
+        "name": "Modern White Smartwatch",
+        "category": "Electronics",
+        "subcategory": "Smartwatch",
+        "price": 603.7,
+        "currency": "USD",
+        "description": "A high-quality modern white smartwatch made from glass. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartwatch",
+            "white",
+            "glass",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+White+Smartwatch",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "White",
+            "material": "Glass",
+            "category": "Smartwatch"
+        }
+    },
+    {
+        "id": "PROD-0006",
+        "name": "Eco-friendly Red Smartphone",
+        "category": "Electronics",
+        "subcategory": "Smartphone",
+        "price": 402.73,
+        "currency": "USD",
+        "description": "A high-quality eco-friendly red smartphone made from leather. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartphone",
+            "red",
+            "leather",
+            "eco-friendly"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Eco-friendly+Red+Smartphone",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Leather",
+            "category": "Smartphone"
+        }
+    },
+    {
+        "id": "PROD-0007",
+        "name": "Luxury Black Smartwatch",
+        "category": "Electronics",
+        "subcategory": "Smartwatch",
+        "price": 126.35,
+        "currency": "USD",
+        "description": "A high-quality luxury black smartwatch made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartwatch",
+            "black",
+            "rubber",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Black+Smartwatch",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Rubber",
+            "category": "Smartwatch"
+        }
+    },
+    {
+        "id": "PROD-0008",
+        "name": "Premium White Headphones",
+        "category": "Electronics",
+        "subcategory": "Headphones",
+        "price": 534.62,
+        "currency": "USD",
+        "description": "A high-quality premium white headphones made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "headphones",
+            "white",
+            "rubber",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+White+Headphones",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "White",
+            "material": "Rubber",
+            "category": "Headphones"
+        }
+    },
+    {
+        "id": "PROD-0009",
+        "name": "Modern Red Smartwatch",
+        "category": "Electronics",
+        "subcategory": "Smartwatch",
+        "price": 964.49,
+        "currency": "USD",
+        "description": "A high-quality modern red smartwatch made from glass. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartwatch",
+            "red",
+            "glass",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Red+Smartwatch",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Glass",
+            "category": "Smartwatch"
+        }
+    },
+    {
+        "id": "PROD-0010",
+        "name": "Classic Wood Headphones",
+        "category": "Electronics",
+        "subcategory": "Headphones",
+        "price": 910.12,
+        "currency": "USD",
+        "description": "A high-quality classic wood headphones made from leather. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "headphones",
+            "wood",
+            "leather",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Wood+Headphones",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Leather",
+            "category": "Headphones"
+        }
+    },
+    {
+        "id": "PROD-0011",
+        "name": "Premium Blue Smartphone",
+        "category": "Electronics",
+        "subcategory": "Smartphone",
+        "price": 314.41,
+        "currency": "USD",
+        "description": "A high-quality premium blue smartphone made from metal. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartphone",
+            "blue",
+            "metal",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+Blue+Smartphone",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Metal",
+            "category": "Smartphone"
+        }
+    },
+    {
+        "id": "PROD-0012",
+        "name": "Premium Black Smartphone",
+        "category": "Electronics",
+        "subcategory": "Smartphone",
+        "price": 862.38,
+        "currency": "USD",
+        "description": "A high-quality premium black smartphone made from glass. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartphone",
+            "black",
+            "glass",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+Black+Smartphone",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Glass",
+            "category": "Smartphone"
+        }
+    },
+    {
+        "id": "PROD-0013",
+        "name": "Compact Black Smartphone",
+        "category": "Electronics",
+        "subcategory": "Smartphone",
+        "price": 66.18,
+        "currency": "USD",
+        "description": "A high-quality compact black smartphone made from glass. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartphone",
+            "black",
+            "glass",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Black+Smartphone",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Glass",
+            "category": "Smartphone"
+        }
+    },
+    {
+        "id": "PROD-0014",
+        "name": "Compact Wood Smartphone",
+        "category": "Electronics",
+        "subcategory": "Smartphone",
+        "price": 83.15,
+        "currency": "USD",
+        "description": "A high-quality compact wood smartphone made from metal. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartphone",
+            "wood",
+            "metal",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Wood+Smartphone",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Metal",
+            "category": "Smartphone"
+        }
+    },
+    {
+        "id": "PROD-0015",
+        "name": "Durable Green Laptop",
+        "category": "Electronics",
+        "subcategory": "Laptop",
+        "price": 964.72,
+        "currency": "USD",
+        "description": "A high-quality durable green laptop made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "laptop",
+            "green",
+            "cotton",
+            "durable"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Durable+Green+Laptop",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Cotton",
+            "category": "Laptop"
+        }
+    },
+    {
+        "id": "PROD-0016",
+        "name": "Classic White Smartwatch",
+        "category": "Electronics",
+        "subcategory": "Smartwatch",
+        "price": 870.33,
+        "currency": "USD",
+        "description": "A high-quality classic white smartwatch made from metal. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartwatch",
+            "white",
+            "metal",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+White+Smartwatch",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "White",
+            "material": "Metal",
+            "category": "Smartwatch"
+        }
+    },
+    {
+        "id": "PROD-0017",
+        "name": "Classic Black Laptop",
+        "category": "Electronics",
+        "subcategory": "Laptop",
+        "price": 321.93,
+        "currency": "USD",
+        "description": "A high-quality classic black laptop made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "laptop",
+            "black",
+            "rubber",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Black+Laptop",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Rubber",
+            "category": "Laptop"
+        }
+    },
+    {
+        "id": "PROD-0018",
+        "name": "Classic Wood Smartphone",
+        "category": "Electronics",
+        "subcategory": "Smartphone",
+        "price": 266.71,
+        "currency": "USD",
+        "description": "A high-quality classic wood smartphone made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartphone",
+            "wood",
+            "cotton",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Wood+Smartphone",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Cotton",
+            "category": "Smartphone"
+        }
+    },
+    {
+        "id": "PROD-0019",
+        "name": "Luxury Blue Smartwatch",
+        "category": "Electronics",
+        "subcategory": "Smartwatch",
+        "price": 589.65,
+        "currency": "USD",
+        "description": "A high-quality luxury blue smartwatch made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "smartwatch",
+            "blue",
+            "rubber",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Blue+Smartwatch",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Rubber",
+            "category": "Smartwatch"
+        }
+    },
+    {
+        "id": "PROD-0020",
+        "name": "Modern Gold Laptop",
+        "category": "Electronics",
+        "subcategory": "Laptop",
+        "price": 287.43,
+        "currency": "USD",
+        "description": "A high-quality modern gold laptop made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "electronics",
+            "laptop",
+            "gold",
+            "cotton",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Gold+Laptop",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Gold",
+            "material": "Cotton",
+            "category": "Laptop"
+        }
+    },
+    {
+        "id": "PROD-0021",
+        "name": "Premium Black Sneakers",
+        "category": "Clothing",
+        "subcategory": "Sneakers",
+        "price": 49.25,
+        "currency": "USD",
+        "description": "A high-quality premium black sneakers made from plastic. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "sneakers",
+            "black",
+            "plastic",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+Black+Sneakers",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Plastic",
+            "category": "Sneakers"
+        }
+    },
+    {
+        "id": "PROD-0022",
+        "name": "Modern Silver Sneakers",
+        "category": "Clothing",
+        "subcategory": "Sneakers",
+        "price": 704.48,
+        "currency": "USD",
+        "description": "A high-quality modern silver sneakers made from plastic. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "sneakers",
+            "silver",
+            "plastic",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Silver+Sneakers",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Plastic",
+            "category": "Sneakers"
+        }
+    },
+    {
+        "id": "PROD-0023",
+        "name": "Modern Silver T-Shirt",
+        "category": "Clothing",
+        "subcategory": "T-Shirt",
+        "price": 266.74,
+        "currency": "USD",
+        "description": "A high-quality modern silver t-shirt made from metal. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "t-shirt",
+            "silver",
+            "metal",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Silver+T-Shirt",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Metal",
+            "category": "T-Shirt"
+        }
+    },
+    {
+        "id": "PROD-0024",
+        "name": "Premium Silver Sneakers",
+        "category": "Clothing",
+        "subcategory": "Sneakers",
+        "price": 431.85,
+        "currency": "USD",
+        "description": "A high-quality premium silver sneakers made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "sneakers",
+            "silver",
+            "cotton",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+Silver+Sneakers",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Cotton",
+            "category": "Sneakers"
+        }
+    },
+    {
+        "id": "PROD-0025",
+        "name": "Durable Wood Jeans",
+        "category": "Clothing",
+        "subcategory": "Jeans",
+        "price": 274.44,
+        "currency": "USD",
+        "description": "A high-quality durable wood jeans made from plastic. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "jeans",
+            "wood",
+            "plastic",
+            "durable"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Durable+Wood+Jeans",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Plastic",
+            "category": "Jeans"
+        }
+    },
+    {
+        "id": "PROD-0026",
+        "name": "Compact Gold Sneakers",
+        "category": "Clothing",
+        "subcategory": "Sneakers",
+        "price": 969.2,
+        "currency": "USD",
+        "description": "A high-quality compact gold sneakers made from metal. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "sneakers",
+            "gold",
+            "metal",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Gold+Sneakers",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Gold",
+            "material": "Metal",
+            "category": "Sneakers"
+        }
+    },
+    {
+        "id": "PROD-0027",
+        "name": "Luxury Blue Jeans",
+        "category": "Clothing",
+        "subcategory": "Jeans",
+        "price": 156.91,
+        "currency": "USD",
+        "description": "A high-quality luxury blue jeans made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "jeans",
+            "blue",
+            "ceramic",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Blue+Jeans",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Ceramic",
+            "category": "Jeans"
+        }
+    },
+    {
+        "id": "PROD-0028",
+        "name": "Compact Silver Sneakers",
+        "category": "Clothing",
+        "subcategory": "Sneakers",
+        "price": 359.26,
+        "currency": "USD",
+        "description": "A high-quality compact silver sneakers made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "sneakers",
+            "silver",
+            "cotton",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Silver+Sneakers",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Cotton",
+            "category": "Sneakers"
+        }
+    },
+    {
+        "id": "PROD-0029",
+        "name": "Luxury Silver Jeans",
+        "category": "Clothing",
+        "subcategory": "Jeans",
+        "price": 596.74,
+        "currency": "USD",
+        "description": "A high-quality luxury silver jeans made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "jeans",
+            "silver",
+            "rubber",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Silver+Jeans",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Rubber",
+            "category": "Jeans"
+        }
+    },
+    {
+        "id": "PROD-0030",
+        "name": "Durable Black Jeans",
+        "category": "Clothing",
+        "subcategory": "Jeans",
+        "price": 692.65,
+        "currency": "USD",
+        "description": "A high-quality durable black jeans made from leather. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "jeans",
+            "black",
+            "leather",
+            "durable"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Durable+Black+Jeans",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Leather",
+            "category": "Jeans"
+        }
+    },
+    {
+        "id": "PROD-0031",
+        "name": "Durable Silver Jeans",
+        "category": "Clothing",
+        "subcategory": "Jeans",
+        "price": 360.1,
+        "currency": "USD",
+        "description": "A high-quality durable silver jeans made from leather. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "jeans",
+            "silver",
+            "leather",
+            "durable"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Durable+Silver+Jeans",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Leather",
+            "category": "Jeans"
+        }
+    },
+    {
+        "id": "PROD-0032",
+        "name": "Compact Red Sneakers",
+        "category": "Clothing",
+        "subcategory": "Sneakers",
+        "price": 62.2,
+        "currency": "USD",
+        "description": "A high-quality compact red sneakers made from metal. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "sneakers",
+            "red",
+            "metal",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Red+Sneakers",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Metal",
+            "category": "Sneakers"
+        }
+    },
+    {
+        "id": "PROD-0033",
+        "name": "Durable Silver Sneakers",
+        "category": "Clothing",
+        "subcategory": "Sneakers",
+        "price": 551.3,
+        "currency": "USD",
+        "description": "A high-quality durable silver sneakers made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "sneakers",
+            "silver",
+            "cotton",
+            "durable"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Durable+Silver+Sneakers",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Cotton",
+            "category": "Sneakers"
+        }
+    },
+    {
+        "id": "PROD-0034",
+        "name": "Modern Blue Jeans",
+        "category": "Clothing",
+        "subcategory": "Jeans",
+        "price": 933.85,
+        "currency": "USD",
+        "description": "A high-quality modern blue jeans made from leather. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "jeans",
+            "blue",
+            "leather",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Blue+Jeans",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Leather",
+            "category": "Jeans"
+        }
+    },
+    {
+        "id": "PROD-0035",
+        "name": "Classic Silver Jacket",
+        "category": "Clothing",
+        "subcategory": "Jacket",
+        "price": 714.24,
+        "currency": "USD",
+        "description": "A high-quality classic silver jacket made from leather. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "jacket",
+            "silver",
+            "leather",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Silver+Jacket",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Leather",
+            "category": "Jacket"
+        }
+    },
+    {
+        "id": "PROD-0036",
+        "name": "Premium Green Sneakers",
+        "category": "Clothing",
+        "subcategory": "Sneakers",
+        "price": 91.88,
+        "currency": "USD",
+        "description": "A high-quality premium green sneakers made from glass. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "sneakers",
+            "green",
+            "glass",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+Green+Sneakers",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Glass",
+            "category": "Sneakers"
+        }
+    },
+    {
+        "id": "PROD-0037",
+        "name": "Premium White Sneakers",
+        "category": "Clothing",
+        "subcategory": "Sneakers",
+        "price": 312.23,
+        "currency": "USD",
+        "description": "A high-quality premium white sneakers made from glass. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "sneakers",
+            "white",
+            "glass",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+White+Sneakers",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "White",
+            "material": "Glass",
+            "category": "Sneakers"
+        }
+    },
+    {
+        "id": "PROD-0038",
+        "name": "Compact Green Jacket",
+        "category": "Clothing",
+        "subcategory": "Jacket",
+        "price": 824.49,
+        "currency": "USD",
+        "description": "A high-quality compact green jacket made from leather. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "jacket",
+            "green",
+            "leather",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Green+Jacket",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Leather",
+            "category": "Jacket"
+        }
+    },
+    {
+        "id": "PROD-0039",
+        "name": "Modern Green Jeans",
+        "category": "Clothing",
+        "subcategory": "Jeans",
+        "price": 705.28,
+        "currency": "USD",
+        "description": "A high-quality modern green jeans made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "jeans",
+            "green",
+            "cotton",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Green+Jeans",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Cotton",
+            "category": "Jeans"
+        }
+    },
+    {
+        "id": "PROD-0040",
+        "name": "Compact Gold T-Shirt",
+        "category": "Clothing",
+        "subcategory": "T-Shirt",
+        "price": 818.98,
+        "currency": "USD",
+        "description": "A high-quality compact gold t-shirt made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "clothing",
+            "t-shirt",
+            "gold",
+            "cotton",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Gold+T-Shirt",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Gold",
+            "material": "Cotton",
+            "category": "T-Shirt"
+        }
+    },
+    {
+        "id": "PROD-0041",
+        "name": "Luxury Black Coffee Table",
+        "category": "Home & Garden",
+        "subcategory": "Coffee Table",
+        "price": 56.17,
+        "currency": "USD",
+        "description": "A high-quality luxury black coffee table made from leather. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "coffee table",
+            "black",
+            "leather",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Black+Coffee+Table",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Leather",
+            "category": "Coffee Table"
+        }
+    },
+    {
+        "id": "PROD-0042",
+        "name": "Eco-friendly Red Coffee Table",
+        "category": "Home & Garden",
+        "subcategory": "Coffee Table",
+        "price": 965.33,
+        "currency": "USD",
+        "description": "A high-quality eco-friendly red coffee table made from leather. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "coffee table",
+            "red",
+            "leather",
+            "eco-friendly"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Eco-friendly+Red+Coffee+Table",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Leather",
+            "category": "Coffee Table"
+        }
+    },
+    {
+        "id": "PROD-0043",
+        "name": "Classic Wood Sofa",
+        "category": "Home & Garden",
+        "subcategory": "Sofa",
+        "price": 997.28,
+        "currency": "USD",
+        "description": "A high-quality classic wood sofa made from glass. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "sofa",
+            "wood",
+            "glass",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Wood+Sofa",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Glass",
+            "category": "Sofa"
+        }
+    },
+    {
+        "id": "PROD-0044",
+        "name": "Sleek Black Coffee Table",
+        "category": "Home & Garden",
+        "subcategory": "Coffee Table",
+        "price": 848.89,
+        "currency": "USD",
+        "description": "A high-quality sleek black coffee table made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "coffee table",
+            "black",
+            "rubber",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Black+Coffee+Table",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Rubber",
+            "category": "Coffee Table"
+        }
+    },
+    {
+        "id": "PROD-0045",
+        "name": "Premium Silver Plant Pot",
+        "category": "Home & Garden",
+        "subcategory": "Plant Pot",
+        "price": 138.49,
+        "currency": "USD",
+        "description": "A high-quality premium silver plant pot made from metal. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "plant pot",
+            "silver",
+            "metal",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+Silver+Plant+Pot",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Metal",
+            "category": "Plant Pot"
+        }
+    },
+    {
+        "id": "PROD-0046",
+        "name": "Modern Red Lamp",
+        "category": "Home & Garden",
+        "subcategory": "Lamp",
+        "price": 781.3,
+        "currency": "USD",
+        "description": "A high-quality modern red lamp made from glass. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "lamp",
+            "red",
+            "glass",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Red+Lamp",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Glass",
+            "category": "Lamp"
+        }
+    },
+    {
+        "id": "PROD-0047",
+        "name": "Sleek Black Sofa",
+        "category": "Home & Garden",
+        "subcategory": "Sofa",
+        "price": 899.26,
+        "currency": "USD",
+        "description": "A high-quality sleek black sofa made from metal. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "sofa",
+            "black",
+            "metal",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Black+Sofa",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Metal",
+            "category": "Sofa"
+        }
+    },
+    {
+        "id": "PROD-0048",
+        "name": "Sleek Red Sofa",
+        "category": "Home & Garden",
+        "subcategory": "Sofa",
+        "price": 215.73,
+        "currency": "USD",
+        "description": "A high-quality sleek red sofa made from metal. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "sofa",
+            "red",
+            "metal",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Red+Sofa",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Metal",
+            "category": "Sofa"
+        }
+    },
+    {
+        "id": "PROD-0049",
+        "name": "Sleek Black Plant Pot",
+        "category": "Home & Garden",
+        "subcategory": "Plant Pot",
+        "price": 852.8,
+        "currency": "USD",
+        "description": "A high-quality sleek black plant pot made from metal. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "plant pot",
+            "black",
+            "metal",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Black+Plant+Pot",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Metal",
+            "category": "Plant Pot"
+        }
+    },
+    {
+        "id": "PROD-0050",
+        "name": "Eco-friendly White Lamp",
+        "category": "Home & Garden",
+        "subcategory": "Lamp",
+        "price": 292.53,
+        "currency": "USD",
+        "description": "A high-quality eco-friendly white lamp made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "lamp",
+            "white",
+            "ceramic",
+            "eco-friendly"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Eco-friendly+White+Lamp",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "White",
+            "material": "Ceramic",
+            "category": "Lamp"
+        }
+    },
+    {
+        "id": "PROD-0051",
+        "name": "Sleek Red Lamp",
+        "category": "Home & Garden",
+        "subcategory": "Lamp",
+        "price": 57.61,
+        "currency": "USD",
+        "description": "A high-quality sleek red lamp made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "lamp",
+            "red",
+            "rubber",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Red+Lamp",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Rubber",
+            "category": "Lamp"
+        }
+    },
+    {
+        "id": "PROD-0052",
+        "name": "Sleek Gold Coffee Table",
+        "category": "Home & Garden",
+        "subcategory": "Coffee Table",
+        "price": 194.85,
+        "currency": "USD",
+        "description": "A high-quality sleek gold coffee table made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "coffee table",
+            "gold",
+            "cotton",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Gold+Coffee+Table",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Gold",
+            "material": "Cotton",
+            "category": "Coffee Table"
+        }
+    },
+    {
+        "id": "PROD-0053",
+        "name": "Premium White Lamp",
+        "category": "Home & Garden",
+        "subcategory": "Lamp",
+        "price": 647.34,
+        "currency": "USD",
+        "description": "A high-quality premium white lamp made from glass. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "lamp",
+            "white",
+            "glass",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+White+Lamp",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "White",
+            "material": "Glass",
+            "category": "Lamp"
+        }
+    },
+    {
+        "id": "PROD-0054",
+        "name": "Sleek Black Sofa",
+        "category": "Home & Garden",
+        "subcategory": "Sofa",
+        "price": 568.64,
+        "currency": "USD",
+        "description": "A high-quality sleek black sofa made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "sofa",
+            "black",
+            "ceramic",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Black+Sofa",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Ceramic",
+            "category": "Sofa"
+        }
+    },
+    {
+        "id": "PROD-0055",
+        "name": "Sleek Green Sofa",
+        "category": "Home & Garden",
+        "subcategory": "Sofa",
+        "price": 874.41,
+        "currency": "USD",
+        "description": "A high-quality sleek green sofa made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "sofa",
+            "green",
+            "rubber",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Green+Sofa",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Rubber",
+            "category": "Sofa"
+        }
+    },
+    {
+        "id": "PROD-0056",
+        "name": "Luxury Gold Plant Pot",
+        "category": "Home & Garden",
+        "subcategory": "Plant Pot",
+        "price": 495.62,
+        "currency": "USD",
+        "description": "A high-quality luxury gold plant pot made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "plant pot",
+            "gold",
+            "ceramic",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Gold+Plant+Pot",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Gold",
+            "material": "Ceramic",
+            "category": "Plant Pot"
+        }
+    },
+    {
+        "id": "PROD-0057",
+        "name": "Compact Green Plant Pot",
+        "category": "Home & Garden",
+        "subcategory": "Plant Pot",
+        "price": 282.68,
+        "currency": "USD",
+        "description": "A high-quality compact green plant pot made from glass. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "plant pot",
+            "green",
+            "glass",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Green+Plant+Pot",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Glass",
+            "category": "Plant Pot"
+        }
+    },
+    {
+        "id": "PROD-0058",
+        "name": "Eco-friendly Silver Coffee Table",
+        "category": "Home & Garden",
+        "subcategory": "Coffee Table",
+        "price": 949.67,
+        "currency": "USD",
+        "description": "A high-quality eco-friendly silver coffee table made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "coffee table",
+            "silver",
+            "ceramic",
+            "eco-friendly"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Eco-friendly+Silver+Coffee+Table",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Ceramic",
+            "category": "Coffee Table"
+        }
+    },
+    {
+        "id": "PROD-0059",
+        "name": "Modern Wood Lamp",
+        "category": "Home & Garden",
+        "subcategory": "Lamp",
+        "price": 658.7,
+        "currency": "USD",
+        "description": "A high-quality modern wood lamp made from metal. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "lamp",
+            "wood",
+            "metal",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Wood+Lamp",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Metal",
+            "category": "Lamp"
+        }
+    },
+    {
+        "id": "PROD-0060",
+        "name": "Eco-friendly Black Plant Pot",
+        "category": "Home & Garden",
+        "subcategory": "Plant Pot",
+        "price": 988.16,
+        "currency": "USD",
+        "description": "A high-quality eco-friendly black plant pot made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "home & garden",
+            "plant pot",
+            "black",
+            "rubber",
+            "eco-friendly"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Eco-friendly+Black+Plant+Pot",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Rubber",
+            "category": "Plant Pot"
+        }
+    },
+    {
+        "id": "PROD-0061",
+        "name": "Classic Green Tennis Racket",
+        "category": "Sports",
+        "subcategory": "Tennis Racket",
+        "price": 809.92,
+        "currency": "USD",
+        "description": "A high-quality classic green tennis racket made from plastic. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "tennis racket",
+            "green",
+            "plastic",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Green+Tennis+Racket",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Plastic",
+            "category": "Tennis Racket"
+        }
+    },
+    {
+        "id": "PROD-0062",
+        "name": "Luxury Black Tennis Racket",
+        "category": "Sports",
+        "subcategory": "Tennis Racket",
+        "price": 366.9,
+        "currency": "USD",
+        "description": "A high-quality luxury black tennis racket made from glass. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "tennis racket",
+            "black",
+            "glass",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Black+Tennis+Racket",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Glass",
+            "category": "Tennis Racket"
+        }
+    },
+    {
+        "id": "PROD-0063",
+        "name": "Modern Black Dumbbells",
+        "category": "Sports",
+        "subcategory": "Dumbbells",
+        "price": 273.98,
+        "currency": "USD",
+        "description": "A high-quality modern black dumbbells made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "dumbbells",
+            "black",
+            "rubber",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Black+Dumbbells",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Rubber",
+            "category": "Dumbbells"
+        }
+    },
+    {
+        "id": "PROD-0064",
+        "name": "Durable Green Running Shoes",
+        "category": "Sports",
+        "subcategory": "Running Shoes",
+        "price": 798.45,
+        "currency": "USD",
+        "description": "A high-quality durable green running shoes made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "running shoes",
+            "green",
+            "cotton",
+            "durable"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Durable+Green+Running+Shoes",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Cotton",
+            "category": "Running Shoes"
+        }
+    },
+    {
+        "id": "PROD-0065",
+        "name": "Classic Black Running Shoes",
+        "category": "Sports",
+        "subcategory": "Running Shoes",
+        "price": 653.83,
+        "currency": "USD",
+        "description": "A high-quality classic black running shoes made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "running shoes",
+            "black",
+            "cotton",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Black+Running+Shoes",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Cotton",
+            "category": "Running Shoes"
+        }
+    },
+    {
+        "id": "PROD-0066",
+        "name": "Compact White Tennis Racket",
+        "category": "Sports",
+        "subcategory": "Tennis Racket",
+        "price": 127.01,
+        "currency": "USD",
+        "description": "A high-quality compact white tennis racket made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "tennis racket",
+            "white",
+            "ceramic",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+White+Tennis+Racket",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "White",
+            "material": "Ceramic",
+            "category": "Tennis Racket"
+        }
+    },
+    {
+        "id": "PROD-0067",
+        "name": "Luxury Blue Yoga Mat",
+        "category": "Sports",
+        "subcategory": "Yoga Mat",
+        "price": 598.6,
+        "currency": "USD",
+        "description": "A high-quality luxury blue yoga mat made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "yoga mat",
+            "blue",
+            "ceramic",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Blue+Yoga+Mat",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Ceramic",
+            "category": "Yoga Mat"
+        }
+    },
+    {
+        "id": "PROD-0068",
+        "name": "Modern Wood Dumbbells",
+        "category": "Sports",
+        "subcategory": "Dumbbells",
+        "price": 592.52,
+        "currency": "USD",
+        "description": "A high-quality modern wood dumbbells made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "dumbbells",
+            "wood",
+            "ceramic",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Wood+Dumbbells",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Ceramic",
+            "category": "Dumbbells"
+        }
+    },
+    {
+        "id": "PROD-0069",
+        "name": "Luxury Blue Running Shoes",
+        "category": "Sports",
+        "subcategory": "Running Shoes",
+        "price": 605.24,
+        "currency": "USD",
+        "description": "A high-quality luxury blue running shoes made from glass. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "running shoes",
+            "blue",
+            "glass",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Blue+Running+Shoes",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Glass",
+            "category": "Running Shoes"
+        }
+    },
+    {
+        "id": "PROD-0070",
+        "name": "Eco-friendly Blue Yoga Mat",
+        "category": "Sports",
+        "subcategory": "Yoga Mat",
+        "price": 682.08,
+        "currency": "USD",
+        "description": "A high-quality eco-friendly blue yoga mat made from metal. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "yoga mat",
+            "blue",
+            "metal",
+            "eco-friendly"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Eco-friendly+Blue+Yoga+Mat",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Metal",
+            "category": "Yoga Mat"
+        }
+    },
+    {
+        "id": "PROD-0071",
+        "name": "Compact Silver Running Shoes",
+        "category": "Sports",
+        "subcategory": "Running Shoes",
+        "price": 230.53,
+        "currency": "USD",
+        "description": "A high-quality compact silver running shoes made from metal. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "running shoes",
+            "silver",
+            "metal",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Silver+Running+Shoes",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Metal",
+            "category": "Running Shoes"
+        }
+    },
+    {
+        "id": "PROD-0072",
+        "name": "Luxury Gold Dumbbells",
+        "category": "Sports",
+        "subcategory": "Dumbbells",
+        "price": 960.76,
+        "currency": "USD",
+        "description": "A high-quality luxury gold dumbbells made from leather. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "dumbbells",
+            "gold",
+            "leather",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Gold+Dumbbells",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Gold",
+            "material": "Leather",
+            "category": "Dumbbells"
+        }
+    },
+    {
+        "id": "PROD-0073",
+        "name": "Premium Red Dumbbells",
+        "category": "Sports",
+        "subcategory": "Dumbbells",
+        "price": 674.88,
+        "currency": "USD",
+        "description": "A high-quality premium red dumbbells made from plastic. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "dumbbells",
+            "red",
+            "plastic",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+Red+Dumbbells",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Plastic",
+            "category": "Dumbbells"
+        }
+    },
+    {
+        "id": "PROD-0074",
+        "name": "Sleek Black Tennis Racket",
+        "category": "Sports",
+        "subcategory": "Tennis Racket",
+        "price": 180.57,
+        "currency": "USD",
+        "description": "A high-quality sleek black tennis racket made from glass. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "tennis racket",
+            "black",
+            "glass",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Black+Tennis+Racket",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Glass",
+            "category": "Tennis Racket"
+        }
+    },
+    {
+        "id": "PROD-0075",
+        "name": "Sleek Green Yoga Mat",
+        "category": "Sports",
+        "subcategory": "Yoga Mat",
+        "price": 418.03,
+        "currency": "USD",
+        "description": "A high-quality sleek green yoga mat made from leather. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "yoga mat",
+            "green",
+            "leather",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Green+Yoga+Mat",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Leather",
+            "category": "Yoga Mat"
+        }
+    },
+    {
+        "id": "PROD-0076",
+        "name": "Sleek White Running Shoes",
+        "category": "Sports",
+        "subcategory": "Running Shoes",
+        "price": 638.2,
+        "currency": "USD",
+        "description": "A high-quality sleek white running shoes made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "running shoes",
+            "white",
+            "rubber",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+White+Running+Shoes",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "White",
+            "material": "Rubber",
+            "category": "Running Shoes"
+        }
+    },
+    {
+        "id": "PROD-0077",
+        "name": "Luxury Black Yoga Mat",
+        "category": "Sports",
+        "subcategory": "Yoga Mat",
+        "price": 707.84,
+        "currency": "USD",
+        "description": "A high-quality luxury black yoga mat made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "yoga mat",
+            "black",
+            "cotton",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Black+Yoga+Mat",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Cotton",
+            "category": "Yoga Mat"
+        }
+    },
+    {
+        "id": "PROD-0078",
+        "name": "Sleek Silver Yoga Mat",
+        "category": "Sports",
+        "subcategory": "Yoga Mat",
+        "price": 390.76,
+        "currency": "USD",
+        "description": "A high-quality sleek silver yoga mat made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "yoga mat",
+            "silver",
+            "cotton",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Silver+Yoga+Mat",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Cotton",
+            "category": "Yoga Mat"
+        }
+    },
+    {
+        "id": "PROD-0079",
+        "name": "Premium Green Yoga Mat",
+        "category": "Sports",
+        "subcategory": "Yoga Mat",
+        "price": 216.17,
+        "currency": "USD",
+        "description": "A high-quality premium green yoga mat made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "yoga mat",
+            "green",
+            "cotton",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+Green+Yoga+Mat",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Cotton",
+            "category": "Yoga Mat"
+        }
+    },
+    {
+        "id": "PROD-0080",
+        "name": "Sleek Gold Tennis Racket",
+        "category": "Sports",
+        "subcategory": "Tennis Racket",
+        "price": 71.9,
+        "currency": "USD",
+        "description": "A high-quality sleek gold tennis racket made from metal. Perfect for your daily needs.",
+        "tags": [
+            "sports",
+            "tennis racket",
+            "gold",
+            "metal",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Gold+Tennis+Racket",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Gold",
+            "material": "Metal",
+            "category": "Tennis Racket"
+        }
+    },
+    {
+        "id": "PROD-0081",
+        "name": "Compact White Shampoo",
+        "category": "Beauty",
+        "subcategory": "Shampoo",
+        "price": 596.68,
+        "currency": "USD",
+        "description": "A high-quality compact white shampoo made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "shampoo",
+            "white",
+            "rubber",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+White+Shampoo",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "White",
+            "material": "Rubber",
+            "category": "Shampoo"
+        }
+    },
+    {
+        "id": "PROD-0082",
+        "name": "Sleek Silver Moisturizer",
+        "category": "Beauty",
+        "subcategory": "Moisturizer",
+        "price": 693.58,
+        "currency": "USD",
+        "description": "A high-quality sleek silver moisturizer made from leather. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "moisturizer",
+            "silver",
+            "leather",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Silver+Moisturizer",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Leather",
+            "category": "Moisturizer"
+        }
+    },
+    {
+        "id": "PROD-0083",
+        "name": "Classic Red Perfume",
+        "category": "Beauty",
+        "subcategory": "Perfume",
+        "price": 110.22,
+        "currency": "USD",
+        "description": "A high-quality classic red perfume made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "perfume",
+            "red",
+            "ceramic",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Red+Perfume",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Ceramic",
+            "category": "Perfume"
+        }
+    },
+    {
+        "id": "PROD-0084",
+        "name": "Classic Wood Shampoo",
+        "category": "Beauty",
+        "subcategory": "Shampoo",
+        "price": 287.24,
+        "currency": "USD",
+        "description": "A high-quality classic wood shampoo made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "shampoo",
+            "wood",
+            "cotton",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Wood+Shampoo",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Cotton",
+            "category": "Shampoo"
+        }
+    },
+    {
+        "id": "PROD-0085",
+        "name": "Modern Wood Perfume",
+        "category": "Beauty",
+        "subcategory": "Perfume",
+        "price": 194.88,
+        "currency": "USD",
+        "description": "A high-quality modern wood perfume made from leather. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "perfume",
+            "wood",
+            "leather",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+Wood+Perfume",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Leather",
+            "category": "Perfume"
+        }
+    },
+    {
+        "id": "PROD-0086",
+        "name": "Durable Blue Perfume",
+        "category": "Beauty",
+        "subcategory": "Perfume",
+        "price": 843.21,
+        "currency": "USD",
+        "description": "A high-quality durable blue perfume made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "perfume",
+            "blue",
+            "ceramic",
+            "durable"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Durable+Blue+Perfume",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Ceramic",
+            "category": "Perfume"
+        }
+    },
+    {
+        "id": "PROD-0087",
+        "name": "Sleek Green Shampoo",
+        "category": "Beauty",
+        "subcategory": "Shampoo",
+        "price": 769.68,
+        "currency": "USD",
+        "description": "A high-quality sleek green shampoo made from metal. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "shampoo",
+            "green",
+            "metal",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Green+Shampoo",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Green",
+            "material": "Metal",
+            "category": "Shampoo"
+        }
+    },
+    {
+        "id": "PROD-0088",
+        "name": "Compact Gold Shampoo",
+        "category": "Beauty",
+        "subcategory": "Shampoo",
+        "price": 841.23,
+        "currency": "USD",
+        "description": "A high-quality compact gold shampoo made from leather. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "shampoo",
+            "gold",
+            "leather",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Gold+Shampoo",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Gold",
+            "material": "Leather",
+            "category": "Shampoo"
+        }
+    },
+    {
+        "id": "PROD-0089",
+        "name": "Durable Black Shampoo",
+        "category": "Beauty",
+        "subcategory": "Shampoo",
+        "price": 524.27,
+        "currency": "USD",
+        "description": "A high-quality durable black shampoo made from plastic. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "shampoo",
+            "black",
+            "plastic",
+            "durable"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Durable+Black+Shampoo",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Plastic",
+            "category": "Shampoo"
+        }
+    },
+    {
+        "id": "PROD-0090",
+        "name": "Luxury Red Lipstick",
+        "category": "Beauty",
+        "subcategory": "Lipstick",
+        "price": 403.99,
+        "currency": "USD",
+        "description": "A high-quality luxury red lipstick made from plastic. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "lipstick",
+            "red",
+            "plastic",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Red+Lipstick",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Plastic",
+            "category": "Lipstick"
+        }
+    },
+    {
+        "id": "PROD-0091",
+        "name": "Compact Blue Shampoo",
+        "category": "Beauty",
+        "subcategory": "Shampoo",
+        "price": 259.38,
+        "currency": "USD",
+        "description": "A high-quality compact blue shampoo made from rubber. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "shampoo",
+            "blue",
+            "rubber",
+            "compact"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Compact+Blue+Shampoo",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Rubber",
+            "category": "Shampoo"
+        }
+    },
+    {
+        "id": "PROD-0092",
+        "name": "Premium Wood Lipstick",
+        "category": "Beauty",
+        "subcategory": "Lipstick",
+        "price": 528.44,
+        "currency": "USD",
+        "description": "A high-quality premium wood lipstick made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "lipstick",
+            "wood",
+            "cotton",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+Wood+Lipstick",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Cotton",
+            "category": "Lipstick"
+        }
+    },
+    {
+        "id": "PROD-0093",
+        "name": "Eco-friendly Wood Perfume",
+        "category": "Beauty",
+        "subcategory": "Perfume",
+        "price": 943.3,
+        "currency": "USD",
+        "description": "A high-quality eco-friendly wood perfume made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "perfume",
+            "wood",
+            "ceramic",
+            "eco-friendly"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Eco-friendly+Wood+Perfume",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Wood",
+            "material": "Ceramic",
+            "category": "Perfume"
+        }
+    },
+    {
+        "id": "PROD-0094",
+        "name": "Eco-friendly Silver Lipstick",
+        "category": "Beauty",
+        "subcategory": "Lipstick",
+        "price": 684.03,
+        "currency": "USD",
+        "description": "A high-quality eco-friendly silver lipstick made from ceramic. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "lipstick",
+            "silver",
+            "ceramic",
+            "eco-friendly"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Eco-friendly+Silver+Lipstick",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Silver",
+            "material": "Ceramic",
+            "category": "Lipstick"
+        }
+    },
+    {
+        "id": "PROD-0095",
+        "name": "Luxury Black Shampoo",
+        "category": "Beauty",
+        "subcategory": "Shampoo",
+        "price": 274.0,
+        "currency": "USD",
+        "description": "A high-quality luxury black shampoo made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "shampoo",
+            "black",
+            "cotton",
+            "luxury"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Luxury+Black+Shampoo",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Black",
+            "material": "Cotton",
+            "category": "Shampoo"
+        }
+    },
+    {
+        "id": "PROD-0096",
+        "name": "Sleek Gold Perfume",
+        "category": "Beauty",
+        "subcategory": "Perfume",
+        "price": 143.12,
+        "currency": "USD",
+        "description": "A high-quality sleek gold perfume made from glass. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "perfume",
+            "gold",
+            "glass",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Gold+Perfume",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Gold",
+            "material": "Glass",
+            "category": "Perfume"
+        }
+    },
+    {
+        "id": "PROD-0097",
+        "name": "Sleek Red Moisturizer",
+        "category": "Beauty",
+        "subcategory": "Moisturizer",
+        "price": 967.83,
+        "currency": "USD",
+        "description": "A high-quality sleek red moisturizer made from metal. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "moisturizer",
+            "red",
+            "metal",
+            "sleek"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Sleek+Red+Moisturizer",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Red",
+            "material": "Metal",
+            "category": "Moisturizer"
+        }
+    },
+    {
+        "id": "PROD-0098",
+        "name": "Modern White Shampoo",
+        "category": "Beauty",
+        "subcategory": "Shampoo",
+        "price": 744.36,
+        "currency": "USD",
+        "description": "A high-quality modern white shampoo made from glass. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "shampoo",
+            "white",
+            "glass",
+            "modern"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Modern+White+Shampoo",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "White",
+            "material": "Glass",
+            "category": "Shampoo"
+        }
+    },
+    {
+        "id": "PROD-0099",
+        "name": "Classic Blue Moisturizer",
+        "category": "Beauty",
+        "subcategory": "Moisturizer",
+        "price": 787.16,
+        "currency": "USD",
+        "description": "A high-quality classic blue moisturizer made from leather. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "moisturizer",
+            "blue",
+            "leather",
+            "classic"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Classic+Blue+Moisturizer",
+        "stock_status": "In Stock",
+        "visual_attributes": {
+            "color": "Blue",
+            "material": "Leather",
+            "category": "Moisturizer"
+        }
+    },
+    {
+        "id": "PROD-0100",
+        "name": "Premium Gold Lipstick",
+        "category": "Beauty",
+        "subcategory": "Lipstick",
+        "price": 340.98,
+        "currency": "USD",
+        "description": "A high-quality premium gold lipstick made from cotton. Perfect for your daily needs.",
+        "tags": [
+            "beauty",
+            "lipstick",
+            "gold",
+            "cotton",
+            "premium"
+        ],
+        "image_url": "https://placehold.co/400x400/png?text=Premium+Gold+Lipstick",
+        "stock_status": "Out of Stock",
+        "visual_attributes": {
+            "color": "Gold",
+            "material": "Cotton",
+            "category": "Lipstick"
+        }
+    }
+]

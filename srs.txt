@@ -1,0 +1,369 @@
+
+EchoShop AI Agent
+Voice-Powered Conversational Commerce Platform
+
+
+
+SOFTWARE REQUIREMENTS SPECIFICATION
+
+Document Version	1.0
+Status	Final Draft
+Prepared For	AI Agent Olympics Hackathon — Milan AI Week 2026
+Prepared By	EchoShop Development Team
+Date	May 2026
+Technology Track	Multimodal Intelligence / Agentic Workflows
+Primary APIs	Google Gemini Pro & Vision, Speechmatics Real-Time STT
+
+CONFIDENTIAL — For Hackathon Evaluation Purposes Only
+
+1. Introduction
+1.1 Purpose
+This Software Requirements Specification (SRS) document defines the functional and non-functional requirements for EchoShop — an AI-powered conversational commerce agent. The system enables users to discover products and find visually similar items through natural spoken language and live camera input, eliminating the dependency on text-based keyword search.
+This document is intended for the following audiences: developers implementing the system, judges evaluating the hackathon submission, and stakeholders assessing the commercial viability of the platform.
+
+1.2 Scope
+EchoShop is a web-based AI agent that integrates two primary AI capabilities:
+•	Voice-Powered Product Discovery: The user speaks naturally to describe product intent, and the system interprets context, asks clarifying questions, and returns ranked product recommendations.
+•	Visual Product Matching: The user presents a physical object or image to a camera, and the system identifies visually similar products from a catalogue.
+The system is designed for deployment in e-commerce platforms targeting users who struggle with conventional text-based search — including non-technical users, elderly users, and users in low-literacy contexts. It is out of scope for this version to handle payment processing, order fulfilment, or return resolution workflows.
+
+1.3 Definitions, Acronyms, and Abbreviations
+STT	Speech-to-Text — conversion of spoken audio into written text
+TTS	Text-to-Speech — conversion of written text into synthesised spoken audio
+LLM	Large Language Model — the AI model (Gemini Pro) used for reasoning and response generation
+Vision Model	Gemini Vision — the multimodal model that interprets image inputs
+Agent	An autonomous AI system that perceives inputs, reasons, and takes multi-step actions
+NLU	Natural Language Understanding — the capability to extract intent and entities from text
+WebSocket	A protocol enabling persistent, full-duplex communication between client and server
+SRS	Software Requirements Specification — this document
+FR	Functional Requirement
+NFR	Non-Functional Requirement
+API	Application Programming Interface
+UI	User Interface
+MVP	Minimum Viable Product
+RAG	Retrieval-Augmented Generation — technique to ground LLM outputs in a product database
+
+1.4 References
+•	Speechmatics Real-Time Transcription API Documentation — https://docs.speechmatics.com
+•	Google Gemini API Documentation — https://ai.google.dev/docs
+•	Google AI Studio — https://aistudio.google.com
+•	AI Agent Olympics Hackathon Brief — Milan AI Week 2026, lablab.ai platform
+•	IEEE Std 830-1998: Recommended Practice for Software Requirements Specifications
+
+1.5 Document Overview
+Section 2 provides an overall description of the product, including product perspective, user classes, constraints, and assumptions. Section 3 specifies functional requirements organised by system feature. Section 4 defines non-functional requirements covering performance, security, usability, and scalability. Section 5 describes external interface requirements. Section 6 covers system architecture and data flow.
+
+2. Overall Description
+2.1 Product Perspective
+EchoShop is a standalone, browser-based web application that functions as an autonomous conversational shopping agent. It does not replace an existing e-commerce platform; rather, it acts as an intelligent front-end layer that sits on top of any product catalogue exposed via API or database query.
+The system is composed of three loosely coupled subsystems:
+•	Voice Interface Subsystem — Captures and streams microphone audio to the Speechmatics STT API and converts agent responses back to audio via the browser Web Speech API.
+•	AI Reasoning Subsystem — Processes transcribed text through Gemini Pro to generate intent-aware, multi-turn conversational responses and product recommendations.
+•	Visual Matching Subsystem — Captures webcam frames and submits them to Gemini Vision to identify visual attributes and retrieve matching products.
+
+2.2 Product Functions — High-Level Summary
+The following table summarises the primary capabilities of EchoShop:
+
+Capability	Summary
+Voice-Powered Product Discovery	User speaks a natural-language product description; agent asks follow-up questions and recommends ranked products
+Contextual Conversation Memory	Agent retains the full dialogue history within a session to resolve pronouns and preferences without repetition
+Visual Product Matching	User shows a physical item or image to the webcam; agent identifies visual similarity and finds matching catalogue items
+Multi-turn Dialogue Management	Agent autonomously decides when sufficient information has been gathered before generating recommendations
+Accessibility-First Voice UX	All interactions are available via voice input and audio output; no typing is required at any step
+
+2.3 User Classes and Characteristics
+2.3.1 Primary User — Conversational Shopper
+This user prefers to describe what they need in spoken language rather than typing keywords. They may be unfamiliar with e-commerce category taxonomy. They expect the system to understand vague or emotionally driven requests (e.g., 'something nice for my mother's birthday') without requiring structured input.
+2.3.2 Accessibility User — Non-Technical / Low-Literacy
+This user cannot efficiently use text-based search. They may have limited reading ability, motor impairments preventing typing, or may be elderly. This user class is the primary motivation for the voice-first design. All core functionality must be operable without typing.
+2.3.3 Visual Searcher
+This user has a physical item, printed image, or on-screen image that represents what they want to buy. They want to find the same or similar product online without describing it verbally or textually. This user interacts primarily with the camera feature.
+2.3.4 Platform Administrator
+A technical user responsible for connecting the product catalogue, configuring API credentials, and monitoring system health. This user interacts with the backend configuration and is not exposed to the conversational UI.
+
+2.4 Operating Environment
+•	Client: Modern web browser (Chrome 110+, Firefox 115+, Edge 110+) with WebSocket support, microphone access, and camera access.
+•	Server: Python FastAPI application deployed on a Vultr Virtual Machine running Ubuntu 22.04 LTS.
+•	External APIs: Speechmatics Real-Time API (WebSocket), Google Gemini Pro API, Google Gemini Vision API, Browser Web Speech API (TTS).
+•	Network: Minimum 2 Mbps upload bandwidth for real-time audio streaming; minimum 5 Mbps for simultaneous audio and video.
+
+2.5 Design and Implementation Constraints
+•	The system must not store raw audio recordings on the server. All audio is streamed directly to the Speechmatics API and discarded after transcription.
+•	All LLM prompts and conversation histories must remain within a single session and must not persist to a database without explicit user consent.
+•	The frontend must be a single-page application (SPA) to avoid page reload interruptions during active voice sessions.
+•	The Gemini API must be called from the server side only; API keys must never be exposed to the browser client.
+•	The system must comply with GDPR principles: no personally identifiable voice data is retained beyond the active session.
+•	TTS must use the browser-native Web Speech API to avoid adding an additional paid service dependency during the hackathon phase.
+
+2.6 Assumptions and Dependencies
+•	The product catalogue is available as a queryable JSON data source or mock REST API. Integration with a live e-commerce backend (Shopify, WooCommerce) is outside MVP scope.
+•	Speechmatics API credits are available as provided by the hackathon partner ($200 per participant).
+•	Google Gemini API free tier or Google Cloud credits ($300) are sufficient for the demonstration workload.
+•	Users grant microphone and camera permissions in the browser when prompted.
+•	The system assumes English as the primary language for MVP. Multilingual support is a post-hackathon enhancement.
+•	Internet connectivity is available and stable at the demonstration venue.
+
+3. Functional Requirements
+Requirements are categorised by system feature. Each requirement is assigned a unique identifier (FR-XXX), a description, and a priority level: High (must have for MVP), Medium (should have), or Low (nice to have).
+
+3.1 Voice Input and Real-Time Transcription
+This feature governs the capture of user speech from the browser microphone and its conversion to text via the Speechmatics Real-Time API.
+
+ID	Description	Priority
+FR-101	The system shall provide a microphone activation control (push-to-speak or toggle) within the main UI that initiates audio capture upon user action.	High
+FR-102	The system shall establish a WebSocket connection to the Speechmatics Real-Time Transcription API upon microphone activation.	High
+FR-103	The system shall stream raw PCM audio at 16 kHz, 16-bit mono from the browser to the Speechmatics WebSocket endpoint in real time.	High
+FR-104	The system shall display partial (interim) transcription results in the UI as the user speaks, updating in real time without user action.	High
+FR-105	The system shall display the final, punctuated transcription result upon detection of an end-of-utterance signal from the Speechmatics API.	High
+FR-106	The system shall close the Speechmatics WebSocket connection gracefully when the user deactivates the microphone or when an utterance is finalised.	Medium
+FR-107	The system shall detect and display an appropriate error message if the Speechmatics WebSocket connection fails or is rejected, without crashing the application.	High
+FR-108	The system shall discard raw audio data immediately after it has been streamed to the Speechmatics API and shall not write audio to disk or database.	High
+FR-109	The system shall support continuous speech sessions where a user may speak multiple utterances sequentially without manually reactivating the microphone between each one.	Medium
+
+3.2 Conversational AI Agent — Product Discovery
+This feature governs the multi-turn dialogue between the user and the Gemini Pro-powered agent. The agent is responsible for understanding user intent, managing conversation history, asking clarifying questions, and generating product recommendations.
+
+ID	Description	Priority
+FR-201	The system shall transmit the finalised transcription text to the Gemini Pro API along with the full conversation history of the current session.	High
+FR-202	The system shall maintain a conversation history object in server memory for the duration of the user session, storing all user utterances and agent responses in chronological order.	High
+FR-203	The system shall initialise the Gemini Pro model with a system prompt that constrains the agent to act as a shopping assistant, respond concisely, ask only one clarifying question per turn, and never produce off-topic responses.	High
+FR-204	The agent shall extract the following entities from user utterances where present: product category, budget constraint, intended recipient, use case or activity, preferred brand, and aesthetic preferences.	High
+FR-205	When insufficient information is available to generate a confident product recommendation (fewer than two of the required entities identified), the agent shall ask a single, targeted clarifying question relevant to the missing information.	High
+FR-206	The agent shall not ask more than three sequential clarifying questions before generating a recommendation, even if some information remains absent.	Medium
+FR-207	Upon gathering sufficient context, the agent shall query the product catalogue and return a ranked list of two to five product recommendations with name, price, a one-sentence justification, and a thumbnail image.	High
+FR-208	The agent shall resolve pronouns and references across turns (e.g., if the user says 'that second one' the agent shall correctly identify the referenced product from the prior response).	Medium
+FR-209	The system shall display agent responses in a styled conversation bubble in the UI and simultaneously trigger the TTS engine to speak the response aloud.	High
+FR-210	The system shall allow the user to interrupt a TTS playback by re-activating the microphone, at which point the audio playback shall stop and speech capture shall begin.	Medium
+FR-211	The agent shall handle out-of-scope requests (e.g., political questions, personal advice) by politely redirecting the conversation to shopping-related topics.	Medium
+FR-212	The agent shall retain session context for a minimum of 50 conversational turns within a single browser session without degradation of response quality.	Low
+
+3.3 Text-to-Speech (TTS) — Agent Voice Output
+This feature governs the conversion of agent text responses into audible speech delivered to the user through the browser.
+
+ID	Description	Priority
+FR-301	The system shall use the browser-native Web Speech API (SpeechSynthesis interface) to convert all agent text responses to audible speech.	High
+FR-302	The system shall begin TTS playback automatically upon receipt of each complete agent response without requiring user action.	High
+FR-303	The system shall provide a mute toggle in the UI that suppresses TTS playback while continuing to display agent responses as text.	Medium
+FR-304	The system shall cancel any in-progress TTS playback when a new agent response is received, preventing overlapping audio output.	High
+FR-305	The TTS voice shall be set to a clear, natural English voice from the available browser SpeechSynthesis voices; if no English voice is available, the system shall fall back to the browser default voice.	Medium
+
+3.4 Visual Product Matching — Camera Input
+This feature governs the capture of visual input from the user's device camera and its submission to Gemini Vision for image analysis and product matching.
+
+ID	Description	Priority
+FR-401	The system shall provide a camera activation button in the UI that, when triggered, requests browser camera permission and activates the device's front or rear camera.	High
+FR-402	The system shall display a live video preview from the camera within the UI while the camera is active, so the user can frame the subject correctly before capture.	High
+FR-403	The system shall provide a capture button that, when pressed, takes a still frame from the live video stream and displays it as a preview image in the conversation panel.	High
+FR-404	The captured image shall be encoded as Base64 JPEG and submitted to the Gemini Vision API along with a structured prompt instructing the model to identify visual attributes including: object category, dominant colour, material or texture, approximate style, and any visible branding.	High
+FR-405	The system shall display a loading indicator while the Gemini Vision API is processing the image, with a timeout of 15 seconds before displaying an error state.	Medium
+FR-406	Upon receiving the Gemini Vision response, the system shall extract identified visual attributes and use them as structured query parameters to retrieve matching products from the product catalogue.	High
+FR-407	The system shall return a ranked list of visually similar products (minimum two, maximum six) with name, price, similarity rationale, and thumbnail image.	High
+FR-408	The visual match results shall be presented in the same conversation panel as voice results, maintaining a unified interaction history.	Medium
+FR-409	The user shall be able to combine visual matching with subsequent voice follow-up (e.g., 'show me something like this but in black') within the same session.	Medium
+FR-410	The system shall not retain the captured image on the server after the Gemini Vision API call has completed. The image must be processed in memory only.	High
+FR-411	The system shall allow the user to upload a static image file (JPEG or PNG, maximum 5 MB) as an alternative to live camera capture for visual matching.	Low
+
+3.5 Product Catalogue Integration
+This feature governs how the system stores, queries, and retrieves product data to support both voice and visual recommendation flows.
+
+ID	Description	Priority
+FR-501	The system shall maintain a product catalogue as a structured JSON data store containing: product ID, name, category, subcategory, price, currency, description, tags, image URL, and stock status.	High
+FR-502	The system shall provide a keyword and tag-based search function over the product catalogue, invoked by the AI agent when generating recommendations.	High
+FR-503	The system shall support filtering of catalogue results by price range, category, and availability status.	High
+FR-504	The product catalogue shall contain a minimum of 100 products across at least five distinct categories for demonstration purposes.	Medium
+FR-505	The system shall support runtime replacement of the product catalogue JSON file without requiring a server restart, to allow demonstration customisation.	Low
+
+3.6 Session Management
+This feature governs the lifecycle of a user session, including session initialisation, conversation state, and session termination.
+
+ID	Description	Priority
+FR-601	The system shall generate a unique session identifier (UUID v4) when a user first loads the application, stored in browser session storage.	High
+FR-602	The system shall associate all conversation turns, captured images, and intermediate results with the session identifier for the duration of the browser session.	High
+FR-603	The system shall provide a 'Start New Session' control that clears the conversation history, resets the agent context, and generates a new session identifier.	Medium
+FR-604	All server-side session data shall be automatically purged from memory 30 minutes after the last interaction, or when the browser tab is closed.	High
+FR-605	The system shall display a session inactivity warning to the user after 20 minutes of no interaction, offering to extend or end the session.	Low
+
+4. Non-Functional Requirements
+4.1 Performance Requirements
+ID	Description	Priority
+NFR-101	The Speechmatics API shall return the first partial transcription result within 500 milliseconds of the user beginning to speak.	High
+NFR-102	The Gemini Pro API shall return a complete agent response within 4 seconds of receiving the finalised transcription, measured at the server.	High
+NFR-103	The Gemini Vision API shall return a complete image analysis response within 8 seconds of image submission, measured at the server.	High
+NFR-104	TTS playback shall begin within 300 milliseconds of the agent response text being rendered in the UI.	Medium
+NFR-105	The application's initial page load time shall not exceed 3 seconds on a standard broadband connection (10 Mbps).	Medium
+NFR-106	The system shall support a minimum of 10 concurrent user sessions without degradation of response times specified in NFR-101 through NFR-103.	Medium
+
+4.2 Security Requirements
+ID	Description	Priority
+NFR-201	All communication between the browser client and the application server shall be encrypted using TLS 1.2 or higher (HTTPS/WSS).	High
+NFR-202	API keys for Speechmatics and Gemini shall be stored as server-side environment variables and shall never be transmitted to the browser client or included in client-side code.	High
+NFR-203	The system shall sanitise all user-provided text inputs (transcribed text) before including them in Gemini API prompts to mitigate prompt injection risks.	High
+NFR-204	Captured images shall be transmitted from client to server over HTTPS only and shall not be stored to persistent disk on the server.	High
+NFR-205	The system shall implement rate limiting on all API endpoints: maximum 60 requests per minute per session for voice endpoints, 20 per minute for image endpoints.	Medium
+
+4.3 Usability Requirements
+ID	Description	Priority
+NFR-301	A user with no prior experience of the application shall be able to complete a product search using only voice within 2 minutes of first loading the application, without consulting any documentation.	High
+NFR-302	All interactive controls shall have visible labels and ARIA attributes to support screen reader compatibility.	Medium
+NFR-303	The microphone and camera status (active / inactive) shall be clearly indicated through distinct visual indicators (e.g., animated icon, colour change) visible at all times during a session.	High
+NFR-304	All error messages presented to the user shall be written in plain, non-technical language and shall suggest a corrective action.	High
+NFR-305	The UI shall be responsive and fully functional on screen widths between 375px (mobile) and 1920px (desktop) without horizontal scrolling.	Medium
+
+4.4 Reliability and Availability
+ID	Description	Priority
+NFR-401	The application server shall achieve 99% uptime during the hackathon demonstration window (May 19–20, 2026).	High
+NFR-402	The system shall gracefully degrade if the Speechmatics API is unavailable: the UI shall present a text input fallback so users can type queries instead.	Medium
+NFR-403	The system shall gracefully degrade if the Gemini Vision API is unavailable: the camera feature shall be disabled with a user-facing notification, while voice search remains operational.	Medium
+NFR-404	The application shall recover automatically from transient network interruptions of up to 5 seconds without requiring a full page reload.	Medium
+
+4.5 Maintainability and Extensibility
+ID	Description	Priority
+NFR-501	The AI agent system prompt shall be stored in a dedicated configuration file, separate from application logic, to allow modification without code changes.	Medium
+NFR-502	The product catalogue integration layer shall be implemented as an abstracted service interface, allowing substitution of the mock JSON store with a live API without changes to the agent logic.	Medium
+NFR-503	All API integration modules (Speechmatics, Gemini Pro, Gemini Vision) shall be implemented as independent, replaceable service classes.	Medium
+NFR-504	The codebase shall include a README with setup instructions, environment variable documentation, and a local development quickstart guide.	High
+
+5. External Interface Requirements
+5.1 User Interface
+The EchoShop UI is a single-page web application with the following distinct regions:
+•	Header Bar: Displays the application name, session status indicator, and the mute toggle for TTS.
+•	Conversation Panel: A vertically scrolling panel that displays the full dialogue history as styled message bubbles, distinguishing user input (right-aligned) from agent responses (left-aligned). Product recommendation cards are rendered inline within agent response bubbles.
+•	Product Card: Displays product thumbnail, name, price, and a one-sentence justification. Each card includes a 'View' action button.
+•	Voice Control Bar: Fixed at the bottom of the screen. Contains the microphone button (push-to-speak or toggle), a real-time transcription preview area, and a camera capture button.
+•	Camera Preview Panel: Appears as an overlay when camera mode is activated, showing the live video feed and a capture button.
+•	Status Indicators: Animated icons show microphone active, camera active, and API processing states.
+
+5.2 Speechmatics Real-Time API Interface
+Protocol	WebSocket (WSS)
+Endpoint	wss://eu2.rt.speechmatics.com/v2
+Authentication	Bearer token passed in the StartRecognition message payload
+Audio Format	Raw PCM, 16 kHz sample rate, 16-bit depth, mono channel
+Input	Continuous audio chunks streamed from browser MediaRecorder
+Output	JSON messages of types: RecognitionStarted, AddPartialTranscript, AddTranscript, EndOfTranscript
+Relevant Fields	transcript (string), is_eos (boolean), duration (float)
+Error Handling	On WebSocket close code 4xxx, display user-facing error and offer retry
+
+5.3 Google Gemini Pro API Interface
+Protocol	HTTPS REST
+Endpoint	https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+Authentication	API key passed as query parameter or Authorization header from server only
+Input	JSON body containing: system instruction (string), conversation history (array of role/content pairs), user message (string)
+Output	JSON response with candidates[0].content.parts[0].text (string)
+Max Tokens	1,024 output tokens per request for agent responses
+Temperature	0.4 (balanced between creativity and factual consistency)
+Error Handling	On HTTP 429 (rate limit), implement exponential backoff with a maximum of 3 retries; on HTTP 500+, display user-facing error
+
+5.4 Google Gemini Vision API Interface
+Protocol	HTTPS REST
+Endpoint	https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+Authentication	API key passed as Authorization header from server only
+Input	JSON body with multipart content: inline_data (Base64 JPEG, mime_type: image/jpeg) and a structured analysis prompt
+Image Size Limit	Maximum 5 MB per image; images exceeding this limit shall be rejected client-side before transmission
+Output	JSON response containing structured visual attribute extraction in text form
+Error Handling	On HTTP 400 (invalid image), display user-facing error instructing user to retake the photo in better lighting; on timeout (>15s), display error and re-enable camera
+
+5.5 Browser Web Speech API (TTS) Interface
+Interface	window.speechSynthesis (SpeechSynthesis)
+Method	speechSynthesis.speak(utterance: SpeechSynthesisUtterance)
+Voice	Preferred: en-US or en-GB voice; fallback to browser default if unavailable
+Rate	1.0 (normal speed)
+Pitch	1.0 (normal pitch)
+Cancel Method	speechSynthesis.cancel() — called before each new utterance to prevent overlap
+Constraints	Behaviour varies across browsers; Chrome requires a user gesture before first TTS call. System handles this by triggering a silent utterance on first microphone activation.
+
+6. System Architecture
+6.1 Architectural Overview
+EchoShop follows a client-server architecture with a thin browser client responsible for media capture and UI rendering, and a Python FastAPI server responsible for all AI API interactions, session state management, and product catalogue queries. This separation ensures that no API credentials are exposed on the client side.
+
+6.2 Component Descriptions
+6.2.1 Browser Client (Frontend)
+•	Technology: React.js (single-page application)
+•	Responsibilities: Microphone capture via MediaRecorder API, WebSocket audio streaming to server, live transcription display, camera capture via getUserMedia API, image encoding and upload, conversation history rendering, TTS playback via Web Speech API, UI state management.
+•	Communication: WebSocket (WSS) for audio streaming; HTTPS REST for image upload and session management.
+6.2.2 Application Server (Backend)
+•	Technology: Python 3.11, FastAPI framework
+•	Responsibilities: WebSocket proxy relay to Speechmatics API, Gemini Pro API calls with conversation history, Gemini Vision API calls for image analysis, product catalogue search and ranking, session state storage in server memory, API key management.
+•	Deployment: Vultr Virtual Machine (Ubuntu 22.04 LTS), accessible via public IP with HTTPS via reverse proxy (Nginx + Let's Encrypt).
+6.2.3 Speechmatics STT Service (External)
+•	Role: Converts streaming audio to text in real time.
+•	Integration Point: Server opens a WSS connection to Speechmatics on behalf of the client, forwarding audio chunks received from the client WebSocket.
+6.2.4 Google Gemini Pro (External)
+•	Role: Conversational reasoning, intent extraction, clarifying question generation, and product recommendation narrative generation.
+•	Integration Point: Server calls the Gemini REST API synchronously on each user turn, passing full session history.
+6.2.5 Google Gemini Vision (External)
+•	Role: Visual attribute extraction from user-submitted images.
+•	Integration Point: Server calls the Gemini multimodal REST API with a Base64-encoded image and a structured extraction prompt.
+6.2.6 Product Catalogue (Internal)
+•	Role: Structured data store of available products.
+•	Implementation: JSON file loaded into server memory at startup; queried via an in-process search function using keyword matching and tag filtering.
+
+6.3 Data Flow — Voice Product Discovery
+The following sequence describes the complete data flow for a voice-initiated product search:
+1.	User presses the microphone button. Browser requests microphone permission if not already granted.
+2.	Browser captures audio via MediaRecorder and opens a WebSocket connection to the application server.
+3.	Server relays audio chunks over a new WSS connection to the Speechmatics Real-Time API.
+4.	Speechmatics returns partial transcript events; server forwards these to the browser for real-time display.
+5.	On end-of-utterance, Speechmatics returns a final transcript; the WebSocket connection to Speechmatics is closed.
+6.	Server appends the final transcript to the session conversation history and constructs a Gemini Pro API request containing the system prompt and full history.
+7.	Gemini Pro returns an agent response (clarifying question or product recommendations).
+8.	Server appends the agent response to the session history and returns the response text to the browser via WebSocket.
+9.	Browser renders the response as a conversation bubble and triggers TTS playback via the Web Speech API.
+
+6.4 Data Flow — Visual Product Matching
+The following sequence describes the complete data flow for a camera-initiated visual search:
+10.	User activates camera mode. Browser requests camera permission if not already granted.
+11.	Browser displays live video preview. User presses capture button.
+12.	Browser encodes the captured frame as Base64 JPEG and POSTs it to the server's image analysis endpoint over HTTPS.
+13.	Server constructs a Gemini Vision API request with the Base64 image and a structured prompt requesting visual attribute extraction.
+14.	Gemini Vision returns a text response listing identified attributes (category, colour, material, style, brand if visible).
+15.	Server parses the extracted attributes and executes a filtered query against the product catalogue.
+16.	Server constructs a ranked list of matching products and returns it to the browser as a JSON response.
+17.	Browser renders the product cards in the conversation panel and triggers TTS reading of the summary.
+18.	Server discards the image data from memory. No image is written to disk.
+
+6.5 Deployment Architecture
+Cloud Provider	Vultr
+Server Type	Vultr Cloud Compute VM
+Operating System	Ubuntu 22.04 LTS
+Web Server	Nginx (reverse proxy, TLS termination)
+TLS Certificate	Let's Encrypt (via Certbot)
+Application	Python FastAPI served by Uvicorn (ASGI)
+Frontend Build	React SPA built with Vite, served as static files by Nginx
+Process Manager	systemd service for Uvicorn auto-restart on failure
+Environment Vars	.env file on server (not committed to repository); contains SPEECHMATICS_API_KEY, GEMINI_API_KEY
+Source Control	Public GitHub repository; MIT licence
+
+7. Appendix
+7.1 Requirements Traceability Matrix
+The following matrix maps functional requirements to the system features and external interfaces they depend upon.
+
+Req. ID	Feature	API Dependency	Priority
+FR-101 to FR-109	Voice Input & STT	Speechmatics Real-Time API	High
+FR-201 to FR-212	Conversational AI Agent	Google Gemini Pro API	High
+FR-301 to FR-305	Text-to-Speech Output	Browser Web Speech API	High / Medium
+FR-401 to FR-411	Visual Product Matching	Google Gemini Vision API	High / Medium
+FR-501 to FR-505	Product Catalogue Integration	Internal JSON / REST	High / Medium
+FR-601 to FR-605	Session Management	Server Memory (FastAPI)	High / Low
+
+7.2 Hackathon Judging Criteria Alignment
+The following table demonstrates how EchoShop addresses each of the AI Agent Olympics judging criteria:
+
+Judging Criterion	How EchoShop Addresses It
+Application of Technology	Deep integration of two hackathon partner APIs (Speechmatics for real-time STT, Gemini Pro + Vision for multimodal reasoning). Both are used for their primary capabilities, not as decorative add-ons.
+Originality	No existing consumer tool combines real-time voice intent understanding with live camera visual matching in a unified conversational shopping flow. The multi-turn agent with accessibility focus is a novel application of these technologies.
+Business Value	Targets cart abandonment (estimated $18B annual loss for US e-commerce) caused by poor search UX. Opens e-commerce to non-literate and elderly demographics. Directly applicable to Shopify, WooCommerce, and marketplace platforms with minimal integration effort.
+Presentation	Live demonstration of end-to-end voice and camera flows; real-time transcription visible on screen; agent reasoning steps articulated aloud via TTS; product cards rendered dynamically from agent output.
+
+7.3 Out of Scope for MVP
+The following items are explicitly excluded from this version of the specification and are deferred to post-hackathon development:
+•	Voice-based return and complaint resolution workflow.
+•	Payment gateway integration or checkout flow.
+•	Live integration with production e-commerce APIs (Shopify, WooCommerce, Amazon).
+•	Multilingual support beyond English.
+•	Mobile native application (iOS / Android).
+•	Personalisation based on purchase history or user profile data.
+•	A/B testing infrastructure for recommendation quality.
+
+NOTE:  This document covers EchoShop MVP Stages 1 and 2 only (Voice-Powered Product Discovery and Visual Product Matching). Stage 3 (Voice-Based Return Resolution) is reserved for a future specification revision.
+
+— End of Document —
