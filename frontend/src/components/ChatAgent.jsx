@@ -23,6 +23,7 @@ function ChatAgent() {
   const [audioWs, setAudioWs] = useState(null);
   const mediaRecorderRef = useRef(null);
   const recognitionRef = useRef(null);
+  const initialTextRef = useRef("");
 
   useEffect(() => {
     axios.post(`${API_BASE}/session`)
@@ -70,16 +71,15 @@ function ChatAgent() {
     rec.onresult = (event) => {
       let finalTranscript = '';
       let interimTranscript = '';
-      for (let i = event.resultIndex; i < event.results.length; ++i) {
+      for (let i = 0; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
           finalTranscript += event.results[i][0].transcript;
         } else {
           interimTranscript += event.results[i][0].transcript;
         }
       }
-      if (finalTranscript) {
-        setInputText(prev => (prev ? prev + " " : "") + finalTranscript);
-      }
+      const prefix = initialTextRef.current;
+      setInputText(prefix ? prefix + " " + finalTranscript : finalTranscript);
       setInterimText(interimTranscript);
     };
 
@@ -109,6 +109,7 @@ function ChatAgent() {
     } else {
       setIsListening(true);
       setInterimText("");
+      initialTextRef.current = inputText;
       
       try {
         window.speechSynthesis?.cancel(); // Cancel any ongoing speech
