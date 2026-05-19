@@ -22,6 +22,7 @@ function ChatAgent() {
   const webcamRef = useRef(null);
   const [audioWs, setAudioWs] = useState(null);
   const mediaRecorderRef = useRef(null);
+  const recognitionRef = useRef(null);
 
   useEffect(() => {
     axios.post(`${API_BASE}/session`)
@@ -48,6 +49,52 @@ function ChatAgent() {
     speakText(text);
   };
 
+  const startNativeSpeech = (stream) => {
+    // Release raw mic stream since browser native speech engine handles its own stream
+    if (stream) {
+      stream.getTracks().forEach(t => t.stop());
+    }
+
+    if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+      alert("Speech recognition is not supported in this browser. Please use Google Chrome.");
+      setIsListening(false);
+      return;
+    }
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const rec = new SpeechRecognition();
+    recognitionRef.current = rec;
+    rec.continuous = true;
+    rec.interimResults = true;
+
+    rec.onresult = (event) => {
+      let finalTranscript = '';
+      let interimTranscript = '';
+      for (let i = event.resultIndex; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+          finalTranscript += event.results[i][0].transcript;
+        } else {
+          interimTranscript += event.results[i][0].transcript;
+        }
+      }
+      if (finalTranscript) {
+        setInputText(prev => (prev ? prev + " " : "") + finalTranscript);
+      }
+      setInterimText(interimTranscript);
+    };
+
+    rec.onerror = (e) => {
+      console.error("Native speech error:", e.error);
+      setIsListening(false);
+    };
+
+    rec.onend = () => {
+      setIsListening(false);
+    };
+
+    rec.start();
+  };
+
   const toggleMic = async () => {
     if (isListening) {
       if (mediaRecorderRef.current) {
@@ -55,29 +102,50 @@ function ChatAgent() {
         mediaRecorderRef.current.stream.getTracks().forEach(t => t.stop());
       }
       if (audioWs) audioWs.close();
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
       setIsListening(false);
     } else {
+      setIsListening(true);
+      setInterimText("");
+      
       try {
         window.speechSynthesis?.cancel(); // Cancel any ongoing speech
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        const recorder = new MediaRecorder(stream);
-        mediaRecorderRef.current = recorder;
 
         const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
         const host = isLocal ? 'localhost:8000' : window.location.host;
         const wsUrl = `${protocol}//${host}/ws/speech`;
+        
+        console.log("Attempting Speechmatics WebSocket:", wsUrl);
         const ws = new WebSocket(wsUrl);
         setAudioWs(ws);
 
+        let wsConnected = false;
+        const connectionTimeout = setTimeout(() => {
+          if (!wsConnected) {
+            console.warn("WebSocket timed out. Falling back to native Speech Recognition.");
+            ws.close();
+            startNativeSpeech(stream);
+          }
+        }, 1500);
+
         ws.onopen = () => {
+          wsConnected = true;
+          clearTimeout(connectionTimeout);
+          console.log("WebSocket connected to Speechmatics backend.");
+          
+          const recorder = new MediaRecorder(stream);
+          mediaRecorderRef.current = recorder;
+          
           recorder.ondataavailable = (e) => {
             if (e.data.size > 0 && ws.readyState === WebSocket.OPEN) {
               ws.send(e.data);
             }
           };
           recorder.start(250);
-          setIsListening(true);
         };
 
         ws.onmessage = (event) => {
@@ -93,14 +161,25 @@ function ChatAgent() {
         };
 
         ws.onerror = (err) => {
-            console.error("WS error", err);
-            setIsListening(false);
+            console.error("WS connection error, trying native Speech fallback:", err);
+            if (!wsConnected) {
+              clearTimeout(connectionTimeout);
+              startNativeSpeech(stream);
+            } else {
+              setIsListening(false);
+            }
         };
-        ws.onclose = () => setIsListening(false);
+
+        ws.onclose = () => {
+          if (wsConnected) {
+            setIsListening(false);
+          }
+        };
 
       } catch (err) {
-        console.error("Mic error:", err);
-        alert("Failed to access microphone or connect to Speechmatics.");
+        console.error("Mic access denied or error:", err);
+        setIsListening(false);
+        alert("Failed to access microphone. Please check browser permissions.");
       }
     }
   };
@@ -124,6 +203,9 @@ function ChatAgent() {
         mediaRecorderRef.current.stream.getTracks().forEach(t => t.stop());
       }
       if (audioWs) audioWs.close();
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
       setIsListening(false);
     }
     
