@@ -60,11 +60,12 @@ function ChatAgent() {
       try {
         window.speechSynthesis?.cancel(); // Cancel any ongoing speech
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        const recorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
+        const recorder = new MediaRecorder(stream);
         mediaRecorderRef.current = recorder;
 
         const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-        const host = window.location.hostname === 'localhost' ? 'localhost:8000' : window.location.host;
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const host = isLocal ? 'localhost:8000' : window.location.host;
         const wsUrl = `${protocol}//${host}/ws/speech`;
         const ws = new WebSocket(wsUrl);
         setAudioWs(ws);
