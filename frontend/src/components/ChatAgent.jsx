@@ -25,6 +25,7 @@ function ChatAgent() {
   const recognitionRef = useRef(null);
   const initialTextRef = useRef("");
   const timeoutRef = useRef(null);
+  const lastProcessedIndexRef = useRef(-1);
 
   useEffect(() => {
     axios.post(`${API_BASE}/session`)
@@ -77,17 +78,23 @@ function ChatAgent() {
     rec.interimResults = true;
 
     rec.onresult = (event) => {
-      let finalTranscript = '';
       let interimTranscript = '';
+      let newFinalText = '';
+      
       for (let i = 0; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
-          finalTranscript += event.results[i][0].transcript;
+          if (i > lastProcessedIndexRef.current) {
+            newFinalText += (newFinalText ? " " : "") + event.results[i][0].transcript;
+            lastProcessedIndexRef.current = i;
+          }
         } else {
           interimTranscript += event.results[i][0].transcript;
         }
       }
-      const prefix = initialTextRef.current;
-      setInputText(prefix ? prefix + " " + finalTranscript : finalTranscript);
+
+      if (newFinalText) {
+        setInputText(prev => (prev ? prev.trim() + " " : "") + newFinalText.trim());
+      }
       setInterimText(interimTranscript);
     };
 
@@ -122,6 +129,7 @@ function ChatAgent() {
       setIsListening(true);
       setInterimText("");
       initialTextRef.current = inputText;
+      lastProcessedIndexRef.current = -1;
       
       try {
         window.speechSynthesis?.cancel(); // Cancel any ongoing speech
@@ -391,7 +399,7 @@ function ChatAgent() {
             </div>
             <div className="voice-status">Listening...</div>
             <div className="voice-transcript">
-              {interimText || inputText ? `"${interimText || inputText}"` : "Speak now, CartMate is listening..."}
+              {inputText || interimText ? `"${inputText + (interimText ? (inputText ? " " : "") + interimText : "")}"` : "Speak now, CartMate is listening..."}
             </div>
           </div>
           <button className="voice-stop-btn" onClick={toggleMic}>
