@@ -34,6 +34,7 @@ body {
   background-color: var(--bg);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   position: relative;
+  overflow: hidden;
 }
 
 .header {
@@ -282,58 +283,204 @@ body {
   height: 28px !important;
 }
 
-/* Media Queries for full responsiveness */
+/* ==============================
+   INPUT BAR CLASSES
+   ============================== */
+.chat-input-bar {
+  padding: 0.75rem 1rem;
+  background-color: var(--surface);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.chat-icon-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.chat-icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.chat-icon-btn.listening {
+  background-color: rgba(239, 68, 68, 0.2);
+  animation: pulse 1.5s infinite;
+}
+
+.chat-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  outline: none;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.chat-input::placeholder {
+  color: var(--text-muted);
+}
+
+.send-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.send-btn:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+
+/* ==============================
+   MOBILE RESPONSIVE (≤600px)
+   ============================== */
 @media (max-width: 600px) {
   .app-container {
     box-shadow: none;
-    height: 100dvh; /* dynamic viewport height for mobile browsers */
+    height: calc(100dvh - 70px); /* dynamic viewport height for mobile browsers */
+  }
+
+  /* --- Navbar area --- */
+  .main-navbar {
+    height: auto;
+    padding: 0.65rem 1rem;
+    gap: 0.5rem;
   }
   
   .header {
-    padding: 0.75rem 1rem;
+    padding: 0.65rem 1rem;
   }
-  
+
   .header h1 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
-  
+
+  /* --- Chat area --- */
   .chat-area {
-    padding: 1rem;
-    gap: 1rem;
-  }
-  
-  .message {
-    max-width: 90%;
-    padding: 0.75rem 0.85rem;
-    font-size: 0.95rem;
-  }
-  
-  .products-grid {
-    grid-template-columns: 1fr;
+    padding: 0.75rem;
     gap: 0.75rem;
   }
-  
+
+  .message {
+    max-width: 92%;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  /* --- Product grid: single column on mobile --- */
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
   .product-image {
-    height: 120px;
+    height: 130px;
   }
-  
+
+  .product-name {
+    font-size: 0.85rem;
+  }
+
+  .product-price {
+    font-size: 0.85rem;
+  }
+
+  /* --- Bottom input bar --- */
   .controls {
-    padding: 1rem;
-    gap: 1.25rem;
+    padding: 0.65rem 0.75rem;
+    gap: 0.6rem;
   }
-  
+
   .btn-mic, .btn-cam {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
   }
-  
+
   .btn-mic svg, .btn-cam svg {
-    width: 22px !important;
-    height: 22px !important;
+    width: 20px !important;
+    height: 20px !important;
   }
-  
+
+  .btn-icon {
+    padding: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  /* Make text input shrink/grow properly */
+  .chat-input {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .send-btn {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  /* --- Camera overlay --- */
   .camera-container {
-    width: 90%;
+    width: 95%;
+  }
+
+  .camera-capture-btn {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.75rem;
+  }
+
+  /* --- Voice overlay --- */
+  .voice-mic-pulser {
+    width: 72px;
+    height: 72px;
+  }
+
+  .voice-status {
+    font-size: 1rem;
+  }
+
+  .voice-transcript {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+
+  .voice-stop-btn {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.75rem;
   }
 }
 

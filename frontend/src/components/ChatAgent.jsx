@@ -353,40 +353,48 @@ function ChatAgent() {
         <div ref={chatEndRef} />
       </main>
 
-      <div style={{ padding: '1rem', backgroundColor: 'var(--surface)', borderTop: '1px solid rgba(255, 255, 255, 0.1)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <div className="chat-input-bar">
         
         {attachedImage && (
            <div style={{ position: 'relative', width: 'fit-content' }}>
-              <img src={attachedImage} alt="preview" style={{ height: '80px', borderRadius: '0.5rem', border: '2px solid var(--primary)' }} />
-              <button onClick={removeImage} style={{ position: 'absolute', top: '-8px', right: '-8px', background: 'var(--danger)', color: 'white', border: 'none', borderRadius: '50%', width: '24px', height: '24px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                 <X size={16} />
+              <img src={attachedImage} alt="preview" style={{ height: '70px', borderRadius: '0.5rem', border: '2px solid var(--primary)' }} />
+              <button onClick={removeImage} style={{ position: 'absolute', top: '-8px', right: '-8px', background: 'var(--danger)', color: 'white', border: 'none', borderRadius: '50%', width: '22px', height: '22px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                 <X size={14} />
               </button>
            </div>
         )}
 
-        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <button className={`btn-icon ${isListening ? 'active' : ''}`} style={{ backgroundColor: isListening ? 'rgba(239, 68, 68, 0.2)' : 'rgba(255, 255, 255, 0.1)', padding: '0.75rem' }} onClick={toggleMic} title="Voice Input">
-            {isListening ? <MicOff size={24} color="var(--danger)" /> : <Mic size={24} color="white" />}
+        <div className="chat-input-row">
+          <button
+            className={`chat-icon-btn ${isListening ? 'listening' : ''}`}
+            onClick={toggleMic}
+            title="Voice Input"
+          >
+            {isListening ? <MicOff size={20} color="var(--danger)" /> : <Mic size={20} color="white" />}
           </button>
           
-          <button className="btn-icon" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', padding: '0.75rem' }} onClick={() => setIsCameraActive(true)} title="Attach Image">
-            <Camera size={24} color="white" />
+          <button
+            className="chat-icon-btn"
+            onClick={() => setIsCameraActive(true)}
+            title="Attach Image"
+          >
+            <Camera size={20} color="white" />
           </button>
 
           <input 
              type="text" 
+             className="chat-input"
              value={inputText + (interimText ? (inputText ? " " : "") + interimText : "")}
              onChange={(e) => {
                  setInputText(e.target.value);
                  setInterimText("");
              }}
-             placeholder={isListening ? "Listening..." : "Type or speak your request..."}
-             style={{ flex: 1, padding: '0.85rem 1rem', borderRadius: '2rem', border: 'none', backgroundColor: 'rgba(255, 255, 255, 0.05)', color: 'white', outline: 'none', fontSize: '1rem' }}
+             placeholder={isListening ? "Listening..." : "Type or speak..."}
              onKeyPress={(e) => { if(e.key === 'Enter') sendRequest(); }}
           />
 
-          <button onClick={sendRequest} style={{ backgroundColor: 'var(--primary)', color: 'white', border: 'none', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }}>
-             <Send size={20} />
+          <button className="send-btn" onClick={sendRequest}>
+             <Send size={18} />
           </button>
         </div>
       </div>
