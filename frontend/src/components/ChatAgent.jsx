@@ -278,6 +278,23 @@ function ChatAgent() {
         </div>
       </div>
 
+      {isListening && (
+        <div className="voice-overlay">
+          <div className="voice-container">
+            <div className="voice-mic-pulser">
+              <Mic size={40} color="white" />
+            </div>
+            <div className="voice-status">Listening...</div>
+            <div className="voice-transcript">
+              {interimText || inputText ? `"${interimText || inputText}"` : "Speak now, CartMate is listening..."}
+            </div>
+          </div>
+          <button className="voice-stop-btn" onClick={toggleMic}>
+            <MicOff size={20} /> Done Speaking
+          </button>
+        </div>
+      )}
+
       {isCameraActive && (
         <div className="camera-overlay">
           <button className="camera-close" onClick={() => setIsCameraActive(false)}>
